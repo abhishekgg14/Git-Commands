@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 750px; margin: auto;">
+        <img src="img1.png" width="350px" alt="" style="display: block; margin: auto;">
+        <p>Git : is a distributed version control system used to track changes in source code during software development. It allows multiple developers to collaborate on a project by enabling them to work on the same codebase simultaneously. Git keeps a record of every change made, allowing developers to revert to previous versions if necessary, and supports branching and merging, making it easier to manage different versions of a project.</p>
+    </div><br><br>
+    <div style="width: 1300px; margin: auto;">
+        <h2>Git Commands</h2>
+        <ul>
+            <li>Steps to configure git for first time: <br><br>
+                <ol>
+                    <li>git config --global user.email "emailID"</li>
+                    <br>
+                    <li>git config --global user.name "name"</li>
+                </ol>
+            </li><br>
+            <li><p>git --version : To check the verion fo the git installed in the system.</p></li>
+            <br>
+            <li><p>git init : It is used to initialize a new Git repository. This command creates a hidden .git directory in the current directory, which contains all the necessary metadata for the repository, such as configuration files, commit history, and branches. </p></li>
+            <br>
+            <li><p>git status : Command displays the state of the working directory and the staging area in a Git repository. It provides information about which changes have been staged, which haven't, and which files aren't being tracked by Git. </p></li>
+            <br>
+            <li><p>git add index.html : (index.html is an example) Command is used to add the specified file, in this example "index.html", to the staging area in a Git repository. This action tells Git that you want to include this file's current changes in the next commit. "git add ." command can be used to stage all changes in the current directory and its subdirectories in a Git repository. </p></li>
+            <br>
+            <li>git commit -m "message" : Used to create a new commit with a descriptive message in a Git repository. A commit is a snapshot of the changes in the staging area and represents a point in the project's history. By using the -m option, you can provide a brief message directly in the command line that summarizes the changes being committed.</li>
+            <br>
+            <li><p>git remote add origin (paste link) : Command is used to add a remote repository to your local Git repository. This is typically done to connect your local repository to a remote server, such as GitHub.</p>
+            <img src="sc2.png" width="700" alt="">
+            </li>
+            <br>
+            <li>git push -u origin main : This command pushes the main branch to the origin remote and sets it up so that future pushes and pulls will default to origin/main. If you’re pushing a branch that doesn’t exist on the remote yet, it will be created.
+                If you just use git push without '-u', you need to specify the branch name each time if it hasn’t been set up previously.</li>
+            <br>
+            <li><p>git log : This command displays a chronological list of commits in the current branch of a Git repository. It shows information about each commit, including the commit hash, author, date, and commit message. This command helps you review the commit history and understand the changes made over time.</p></li>
+        </ul><br>
+        <h3>Steps for going back to previous version of the code by deleting the recent versions.</h3>
+        <ol>
+            <li>git log</li><br>
+            <li><p>Copy the commit hash of the version which you want to go back to.</p>
+                <img src="sc3.png" width="700" alt="">
+            </li><br>
+            <li>git reset --hard (Paste the copied commit hash here)</li>
+        </ol><br>
+        <h3>Steps for going back to previous version of the code without deleting recent versions.</h3>
+        <ol>
+            <li>git log</li><br>
+            <li><p>Copy the commit hash of the version which you want to go back to.</p>
+                <img src="sc3.png" width="700" alt="">
+            </li><br>
+            <li>git reset --soft (Paste the copied commit hash here)</li>
+        </ol><br>
+        <h3>Steps to clone a project from github.</h3>
+        <ol>
+            <li><p>Copy code from from the shared git repository</p> 
+                <img src="sc1.png" width="700" alt="">
+            </li><br>
+            <li>git clone (paste copied code here.)</li><br>
+            <li>git pull : To get updated files from files from repository.</li>
+        </ol><br>
+        <h3>Git Branching</h3>
+        <p>Git branching allows you to diverge from the main line of development and continue to work independently on a separate line. It helps you manage multiple features, fixes, or experiments simultaneously within the same repository. Each branch can evolve independently of others, and you can later merge changes from one branch into another. This way, you can isolate development work, collaborate more efficiently, and maintain a clean project history.</p>
+        <ul>
+            <li>git branch : This shows a list of all local branches. The current branch is indicated with an asterisk (*).</li><br>
+            <li>git branch test : This creates a new branch named 'test' but does not switch to it.</li><br>
+            <li>git checkout test : When you use this command, you're switching to a branch named 'test'. If that branch exists, Git will update your working directory to reflect the state of the 'test' branch.</li><br>
+            <li>git branch -d test : This deletes the branch named 'test'. The -d option prevents deletion if the branch has unmerged changes, use '-D' to force deletion.</li><br>
+            <li>git merge test : This command is used to integrate changes from one branch into another. Here you are merging the changes from the 'test' branch into your current branch.</li>
+        </ul><br>
+    </div>
+</body>
+</html>
